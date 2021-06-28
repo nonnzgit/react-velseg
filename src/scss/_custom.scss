@@ -1,0 +1,5 @@
+$primary: #004db3;
+$secondary: #c5c900;
+
+// IMPORTAR SIEMPRE DESPUES DE ESTABLECES LAS VARIABLES PERSONALIZADAS
+@import "node_modules/bootstrap/scss/bootstrap";

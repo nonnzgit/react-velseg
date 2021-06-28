@@ -1,10 +1,8 @@
 // REACT
 import React from "react";
 import ReactDOM from "react-dom";
-// BOOTSTRAP
-import "bootstrap/dist/css/bootstrap.css";
-// CSS
-import "./index.css";
+// SASS CUSTOM FILES
+import "./scss/index.scss";
 // COMPONENTS
 import App from "./App";
 

@@ -1,0 +1,24 @@
+// IMPORTAR ANTES DE LA PERSONALIZACION QUE VAYAMOS A HACER
+@import "./custom.scss";
+
+// FONTS
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+// GLOBAL STYLES
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* PROVISIONALMENTE MIENTRAS TRABAJO */
+  background-color: rgb(58, 58, 58);
+}
