@@ -1,7 +1,7 @@
 // BOOTSTRAP
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, Container } from "react-bootstrap";
 // STYLED COMPONENTS
-import { StyledNavbar, StyledNavlink } from "./styles.js";
+import { ScNavbar, ScNavlink } from "./styles.js";
 import { ButtonPhone } from "../Buttons/Buttons.js";
 // LOGO
 import Logo from "../../images/logo.png";
@@ -14,17 +14,13 @@ import React, { useState } from "react";
 const BsNavBar = () => {
   const [toggleHam, setToggleHam] = useState(false);
 
-  const toggleButton = () => {
-    setToggleHam({ toggleHam: !toggleHam });
-  };
-
   return (
-    <StyledNavbar
+    <ScNavbar
       collapseOnSelect
       className="navbar-dark shadow sticky-top"
       expand="lg"
     >
-      <div className="container">
+      <Container fluid="xl">
         <Navbar.Brand href="#home">
           <img src={Logo} alt="logo empresa" />
         </Navbar.Brand>
@@ -43,51 +39,51 @@ const BsNavBar = () => {
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto d-flex align-items-center">
-            <StyledNavlink
+            <ScNavlink
               active
               href="#home"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               Servicios
-            </StyledNavlink>
-            <StyledNavlink
+            </ScNavlink>
+            <ScNavlink
               active
               href="#home"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               Productos
-            </StyledNavlink>
-            <StyledNavlink
+            </ScNavlink>
+            <ScNavlink
               active
               href="#home"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               Compañías
-            </StyledNavlink>
-            <StyledNavlink
+            </ScNavlink>
+            <ScNavlink
               active
               href="#home"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               FAQ
-            </StyledNavlink>
-            <StyledNavlink
+            </ScNavlink>
+            <ScNavlink
               active
               href="#home"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               Contacta
-            </StyledNavlink>
-            <StyledNavlink
+            </ScNavlink>
+            <ScNavlink
               href="tel:+34955327396"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               <ButtonPhone innerText={"955 327 396"} />
-            </StyledNavlink>
+            </ScNavlink>
           </Nav>
         </Navbar.Collapse>
-      </div>
-    </StyledNavbar>
+      </Container>
+    </ScNavbar>
   );
 };
 

@@ -11,16 +11,49 @@ export const StyledButton = styled(Button)`
   transition: all 0.1s linear;
   border: 1.5px solid white;
 
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+
+  &:active,
+  &:visited,
+  &:focus,
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1.5px solid white;
+    box-shadow: none;
+  }
+
   @media (hover) {
     &:hover {
       background: ${colors.gradient};
       color: white;
-      border: 1px solid white;
+      border: 1.5px solid white;
 
       div {
         transition: all 0.1s linear;
         background-color: black;
       }
+    }
+  }
+`;
+
+export const StyledButtonWhite = styled(StyledButton)`
+  border: 1.5px solid ${colors.primary};
+
+  &:active,
+  &:visited,
+  &:focus,
+  &:hover {
+    border: 1.5px solid ${colors.primary};
+    box-shadow: none;
+  }
+
+  @media (hover) {
+    &:hover {
+      border: 1.5px solid ${colors.primary};
     }
   }
 `;
