@@ -41,35 +41,35 @@ const BsNavBar = () => {
           <Nav className="ml-auto d-flex align-items-center">
             <ScNavlink
               active
-              href="#home"
+              href="#servicios"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               Servicios
             </ScNavlink>
             <ScNavlink
               active
-              href="#home"
+              href="#productos"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               Productos
             </ScNavlink>
             <ScNavlink
               active
-              href="#home"
+              href="#companies"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               Compañías
             </ScNavlink>
             <ScNavlink
               active
-              href="#home"
+              href="#faq"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               FAQ
             </ScNavlink>
             <ScNavlink
               active
-              href="#home"
+              href="#contacta"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               Contacta

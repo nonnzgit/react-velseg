@@ -96,5 +96,6 @@ export const Separator = styled.div`
     margin: 0 auto;
     border-radius: 10px;
     background: ${colors.gradient};
+    background: ${(props) => props.green && `${colors.secondary}`};
   }
 `;

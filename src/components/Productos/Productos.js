@@ -83,7 +83,7 @@ const Productos = () => {
   }
 
   return (
-    <ScProductos>
+    <ScProductos id="productos">
       <Container fluid={"xl"}>
         {/* CABECERA */}
         <ScSubtitle responsive>Productos</ScSubtitle>

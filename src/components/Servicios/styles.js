@@ -3,6 +3,7 @@ import { colors } from "../../globalStyles.js";
 
 export const ScServicios = styled.section`
   background: white;
+  padding: 5rem 0 3rem 0;
 
   .CcIconosServicios {
     color: ${colors.primary};

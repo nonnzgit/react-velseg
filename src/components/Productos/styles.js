@@ -4,11 +4,12 @@ import { colors } from "../../globalStyles.js";
 /* PRODUCTOS */
 export const ScProductos = styled.div`
   background: white;
-  padding: 4rem 0 2rem 0;
+  padding: 5rem 0 2rem 0;
 
   .botonera {
     display: flex;
     justify-content: center;
+    margin: 3rem 0 1rem 0;
   }
 `;
 

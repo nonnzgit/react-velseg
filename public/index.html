@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon.png" />
     <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -39,5 +43,34 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script type="module">
+      import Swiper from "https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js";
+
+      const swiper = new Swiper(".mySwiper", {
+        breakpoints: {
+          // when window width is >=
+          500: {
+            slidesPerView: 2,
+          },
+          770: {
+            slidesPerView: 3,
+          },
+          1000: {
+            slidesPerView: 4,
+          },
+          1200: {
+            slidesPerView: 5,
+          },
+        },
+        autoplay: {
+          delay: 10,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        },
+        speed: 2000,
+        loop: true,
+      });
+    </script>
   </body>
 </html>
