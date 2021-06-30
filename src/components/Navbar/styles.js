@@ -24,16 +24,16 @@ export const ScNavlink = styled(Nav.Link)`
   margin: auto 0;
 
   &:hover {
-    text-decoration: underline !important;
     color: white;
+    text-decoration: underline !important;
     text-decoration-color: ${colors.secondary} !important;
     text-decoration-thickness: 3px !important;
-    text-underline-offset: 1.6rem;
+    text-underline-offset: 0.5rem;
   }
 
-  @media (hover) and (max-width: 992px) {
+  @media (hover) and (min-width: 992px) {
     &:hover {
-      text-underline-offset: 0.5rem;
+      text-underline-offset: 1.6rem;
     }
   }
 `;

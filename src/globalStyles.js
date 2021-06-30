@@ -42,7 +42,6 @@ export const ScSubtitle = styled.h1`
 export const ScTextLead = styled.p.attrs(() => ({
   className: "lead",
 }))`
-  font-family: "Poppins", sans-serif;
   line-height: ${(props) => props.lineH && "2"};
   font-weight: ${(props) => props.bold && "bold"};
 
