@@ -69,7 +69,7 @@ const BsNavBar = () => {
             </ScNavlink>
             <ScNavlink
               active
-              href="#contacta"
+              href="#contacto"
               onClick={() => setToggleHam((prevToggleHam) => !prevToggleHam)}
             >
               Contacta

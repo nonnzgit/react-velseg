@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../globalStyles.js";
 
 export const ScCompanies = styled.section`
-  padding: 5rem 0;
+  padding: 5rem 0 1rem 0;
   background: white;
 
 

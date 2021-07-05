@@ -28,7 +28,7 @@ export const ScNavlink = styled(Nav.Link)`
     text-decoration: underline !important;
     text-decoration-color: ${colors.secondary} !important;
     text-decoration-thickness: 3px !important;
-    text-underline-offset: 0.5rem;
+    text-underline-offset: 1.7rem !important;
   }
 
   @media (hover) and (min-width: 992px) {
