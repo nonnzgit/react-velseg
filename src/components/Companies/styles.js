@@ -5,12 +5,11 @@ export const ScCompanies = styled.section`
   padding: 5rem 0 1rem 0;
   background: white;
 
-
   span {
-    color: ${colors.primary}
+    color: ${colors.primary};
   }
   strong {
-    color: ${colors.secondary}
+    color: ${colors.secondary};
   }
 
   .swiper-container {
@@ -45,8 +44,9 @@ export const ScCompanies = styled.section`
       transition: transform ease-in-out 0.2s;
 
       &:hover {
-          border-bottom: solid ${colors.secondary};
-          transform: translateY(-4px);
+        border-bottom: solid ${colors.secondary};
+        transform: translateY(-4px);
       }
     }
+  }
 `;
