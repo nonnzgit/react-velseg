@@ -5,7 +5,7 @@ import { ScNavbar, ScNavlink } from "./styles.js";
 import { ButtonPhone } from "../Buttons/Buttons.js";
 // LOGO
 import Logo from "../../images/logo.png";
-// FONTS
+// ICONS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 // HOOKS

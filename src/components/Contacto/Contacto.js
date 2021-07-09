@@ -2,6 +2,12 @@ import { ScContacto } from "./style.js";
 import logoConj from "../../images/logocon.jpg";
 import { Container, Row, Col } from "react-bootstrap";
 import { Separator, ScSubtitle } from "../../globalStyles.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faPhoneAlt,
+  faStoreAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Contacto = () => {
   return (
@@ -13,13 +19,14 @@ const Contacto = () => {
           </ScSubtitle>
           <Separator className="d-block" />
         </Row>
-        <Row className="row m-1 mt-5 shadow">
-          <Col lg={6} className="p-3">
-            <div className="col-12 shadow p-0 mt-5">
+        <Row className="cardContainer m-1 mt-5 shadow">
+          <Col lg={6} className="firstCard p-3">
+            <div className="col-12 p-0 mt-3 mb-3 d-flex justify-content-center">
               <img
                 src={logoConj}
                 alt="logotipo conjunto corredurias"
                 width="100%"
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className="w-100">
@@ -42,15 +49,19 @@ const Contacto = () => {
               <h3>Encontrarás toda la información a continuación</h3>
             </div>
           </Col>
-          <div className="col-lg-6 col-12 bg-white p-3">
-            <div className="row contact-card-content lh-lg">
+          <Col lg={6} className="secondCard bg-white p-3">
+            <div className="row secondCardInfo lh-lg">
               <div className="col-6 text-center">
                 <a
                   href="https://goo.gl/maps/XgzeU54osK4gJuVq6"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <i className="fas fa-store-alt btn btn-rounded bg-secondary text-white shadow"></i>
+                  <FontAwesomeIcon
+                    className="btn btn-rounded bg-secondary text-white shadow"
+                    icon={faStoreAlt}
+                    size="lg"
+                  />
                 </a>
               </div>
               <div className="col-6 text-center">
@@ -59,7 +70,11 @@ const Contacto = () => {
               </div>
               <div className="col-6 text-center">
                 <a href="tel:+34606342351">
-                  <i className="fas fa-phone-alt btn btn-rounded bg-secondary text-white shadow"></i>
+                  <FontAwesomeIcon
+                    className="btn btn-rounded bg-secondary text-white shadow"
+                    icon={faPhoneAlt}
+                    size="lg"
+                  />
                 </a>
               </div>
               <div className="col-6 text-center">
@@ -67,7 +82,11 @@ const Contacto = () => {
               </div>
               <div className="col-6 text-center ">
                 <a href="mailto:montequinto@grupo10mb.com">
-                  <i className="fas fa-envelope btn btn-rounded bg-secondary text-white shadow"></i>
+                  <FontAwesomeIcon
+                    className="btn btn-rounded bg-secondary text-white shadow"
+                    icon={faEnvelope}
+                    size="lg"
+                  />
                 </a>
               </div>
               <div className="col-6 text-center">montequinto@grupo10mb.com</div>
@@ -82,7 +101,7 @@ const Contacto = () => {
               title="gmaps"
               frameBorder="0"
             ></iframe>
-          </div>
+          </Col>
         </Row>
       </Container>
     </ScContacto>

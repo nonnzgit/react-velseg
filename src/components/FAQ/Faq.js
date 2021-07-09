@@ -14,9 +14,7 @@ import {
 import { ScFaq } from "./styles";
 
 function CustomToggle({ children, eventKey }) {
-  const decoratedOnClick = useAccordionToggle(eventKey, () =>
-    console.log("totally custom!")
-  );
+  const decoratedOnClick = useAccordionToggle(eventKey);
 
   return (
     <button
