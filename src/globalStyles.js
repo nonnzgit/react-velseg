@@ -22,9 +22,11 @@ export const ScTitle = styled.h1`
 
 export const ScSubtitle = styled.h1`
   text-align: center;
+  text-align: ${(props) => props.start && "start"};
   font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
+  font-weight: ${(props) => props.normal && "normal"};
 
   @media (min-width: 576px) {
     font-size: ${(props) => props.responsive && "3rem"};

@@ -22,10 +22,12 @@ const Intro = () => {
                 seguro y te ofreceremos las pólizas del mercado que más se
                 adapten a ti.
               </ScTextBasic>
-              <ButtonArrow
-                innerText={"Ponte en contacto con nosotros"}
-                className="font-weight-normal"
-              />
+              <a href="#contacto">
+                <ButtonArrow
+                  innerText={"Ponte en contacto con nosotros"}
+                  className="font-weight-normal"
+                />
+              </a>
             </Col>
             <Col md={6} sm={12} className="pl-1 pr-1">
               <img src={PolizaIntro} alt="poliza de seguro" className="w-100" />
