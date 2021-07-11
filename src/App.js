@@ -5,6 +5,7 @@ import Productos from "./components/Productos/Productos.js";
 import Companies from "./components/Companies/Companies.js";
 import Faq from "./components/FAQ/Faq.js";
 import Contacto from "./components/Contacto/Contacto.js";
+import Footer from "./components/Footer/Footer.js";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Companies />
       <Faq />
       <Contacto />
+      <Footer />
     </>
   );
 }

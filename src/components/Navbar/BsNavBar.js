@@ -22,7 +22,7 @@ const BsNavBar = () => {
     >
       <Container fluid="xl">
         <Navbar.Brand href="#home">
-          <img src={Logo} alt="logo empresa" />
+          <img src={Logo} alt="logo empresa" width="130px" />
         </Navbar.Brand>
         <div className="CcHamMenu">
           <Navbar.Toggle
