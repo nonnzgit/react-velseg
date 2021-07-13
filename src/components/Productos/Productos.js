@@ -1,6 +1,7 @@
 import { ScSubtitle, Separator, ScTextLead } from "../../globalStyles";
 // BOOTSTRAP
 import { Container, Button, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { ScProductos } from "./styles.js";
 import Cards from "./Cards.js";
 
@@ -135,6 +136,15 @@ const Productos = () => {
           >
             Personas
           </Button>
+          <Link to="/tarificador">
+            <Button
+              className="btnTarif"
+              variant="outline-secondary"
+              style={{ margin: "0 0.3rem 1rem 0.3rem" }}
+            >
+              Tarificador Salud
+            </Button>
+          </Link>
         </Row>
 
         {/* FICHAS DE PRODUCTOS */}

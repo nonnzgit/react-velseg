@@ -11,6 +11,28 @@ export const ScProductos = styled.div`
     justify-content: center;
     margin: 3rem 0 1rem 0;
   }
+
+  .btnTarif {
+    color: black;
+    font-weight: 600;
+    background: white;
+    border: 2px solid ${colors.secondary} !important;
+
+    &:hover {
+      background: ${colors.secondary};
+      color: white;
+      transition: all 0.0001s linear;
+    }
+
+    &:active {
+      outline: 4px solid #e6ee9c;
+      color: white !important;
+    }
+
+    &:focus {
+      outline: 4px solid #e6ee9c;
+    }
+  }
 `;
 
 /* CARDS */
