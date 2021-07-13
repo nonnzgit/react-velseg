@@ -12,11 +12,6 @@ export const ScCompanies = styled.section`
     color: ${colors.secondary};
   }
 
-  .swiper-container {
-    width: 100%;
-    height: 120px;
-  }
-
   .swiper-slide {
     text-align: center;
     font-size: 18px;

@@ -22,6 +22,13 @@ import company18 from "../../images/companies/company-18.jpg";
 import company19 from "../../images/companies/company-19.jpg";
 import company20 from "../../images/companies/company-20.jpg";
 
+// SWIPER REACT
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay } from "swiper/core";
+import "swiper/swiper.min.css";
+
+SwiperCore.use([Autoplay]);
+
 const Companies = () => {
   return (
     <ScCompanies id="companies">
@@ -42,69 +49,93 @@ const Companies = () => {
             .
           </h2>
           <div className="container">
-            <div className="swiper-container mySwiper">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
+            <div className="swiper-container">
+              <Swiper
+                breakpoints={{
+                  // when window width is >=
+                  500: {
+                    slidesPerView: 2,
+                  },
+                  770: {
+                    slidesPerView: 3,
+                  },
+                  1000: {
+                    slidesPerView: 4,
+                  },
+                  1200: {
+                    slidesPerView: 5,
+                  },
+                }}
+                autoplay={{
+                  delay: 10,
+                  pauseOnMouseEnter: true,
+                  disableOnInteraction: false,
+                }}
+                speed={2000}
+                loop={true}
+                className="mySwiper"
+              >
+                <SwiperSlide className="swiper-slide">
                   <img src={company1} alt="company 1" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company2} alt="company 2" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company3} alt="company 3" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company4} alt="company 4" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company5} alt="company 5" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company6} alt="company 6" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company7} alt="company 7" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company8} alt="company 8" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company9} alt="company 9" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company10} alt="company 10" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company11} alt="company 11" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company12} alt="company 12" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company13} alt="company 13" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company14} alt="company 14" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company15} alt="company 15" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company16} alt="company 16" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company17} alt="company 17" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company18} alt="company 18" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company19} alt="company 19" />
-                </div>
-                <div className="swiper-slide">
+                </SwiperSlide>
+                <SwiperSlide className="swiper-slide">
                   <img src={company20} alt="company 20" />
-                </div>
-              </div>
+                </SwiperSlide>
+              </Swiper>
             </div>
           </div>
         </Row>
