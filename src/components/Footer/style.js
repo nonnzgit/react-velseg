@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ScFooter = styled.section`
+  position: relative;
   background: #424242;
   padding: 5rem 1rem 3rem 1rem;
   color: white;
@@ -8,7 +9,7 @@ export const ScFooter = styled.section`
   .companies {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
     img {
       margin-bottom: 1rem;
@@ -32,6 +33,11 @@ export const ScFooter = styled.section`
       li {
         font-size: 0.9rem;
         padding: 0.3rem 0;
+
+        .routerLink {
+          text-decoration: none;
+          color: white;
+        }
       }
     }
   }

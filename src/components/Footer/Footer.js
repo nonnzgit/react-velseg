@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import LogoG10 from "../../images/logoG10.png";
 import { ScFooter } from "./style.js";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -18,8 +19,16 @@ const Footer = () => {
           <Col className="linksCol" lg={2}>
             <span>Tarificador</span>
             <ul>
-              <li>Seguro de Salud</li>
-              <li>Seguro de Impago Alquiler</li>
+              <li>
+                <Link to="/tarificador/salud" className="routerLink">
+                  Seguro de Salud
+                </Link>
+              </li>
+              <li>
+                <Link to="/tarificador/impagoalquiler" className="routerLink">
+                  Seguro de Impago Alquiler
+                </Link>
+              </li>
             </ul>
           </Col>
           <Col className="linksCol" lg={2}>

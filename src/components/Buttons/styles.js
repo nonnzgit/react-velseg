@@ -58,6 +58,29 @@ export const StyledButtonWhite = styled(StyledButton)`
   }
 `;
 
+export const StyledButtonNavigation = styled.button`
+  font-size: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: ${colors.secondary};
+  z-index: 11;
+
+  &:hover {
+    background: black;
+    transition: background 0.175s ease-in-out;
+  }
+`;
+
 export const StyledPhoneIcon = styled.div`
   display: inline-block;
   padding: 0.2rem;

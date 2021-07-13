@@ -136,7 +136,7 @@ const Productos = () => {
           >
             Personas
           </Button>
-          <Link to="/tarificador">
+          <Link to="/tarificador/salud">
             <Button
               className="btnTarif"
               variant="outline-secondary"
