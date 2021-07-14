@@ -7,6 +7,10 @@ const TarificadorSalud = () => {
     <ScTarificadorSalud>
       <ScSubtitle responsive>Tarificador de Salud</ScSubtitle>
       <Separator />
+      <form action="">
+        <button>+</button>
+        <input type="date" />
+      </form>
     </ScTarificadorSalud>
   );
 };

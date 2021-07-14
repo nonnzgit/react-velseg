@@ -50,15 +50,22 @@ export const ButtonArrowWhite = (props) => {
 };
 
 export const ButtonToTop = () => {
+  function scrollTop() {
+    const top = document.querySelector("body");
+    top.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
   return (
-    <a href="#home">
-      <StyledButtonNavigation
-        type="button"
-        className="rounded-pill btn-rounded"
-      >
-        <FontAwesomeIcon icon={faChevronUp} />
-      </StyledButtonNavigation>
-    </a>
+    <StyledButtonNavigation
+      type="button"
+      className="rounded-pill btn-rounded"
+      onClick={scrollTop}
+    >
+      <FontAwesomeIcon icon={faChevronUp} />
+    </StyledButtonNavigation>
   );
 };
 
