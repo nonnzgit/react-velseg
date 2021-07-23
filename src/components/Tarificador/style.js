@@ -22,7 +22,7 @@ export const ScPanel = styled.div`
 export const ScFechas = styled.div`
   background: #d7ccc8;
   border-radius: 10px;
-  padding: 3rem 1rem;
+  padding: 1.5rem 1rem;
   width: 18rem;
   color: black;
 
