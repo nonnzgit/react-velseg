@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // ESTILOS
 import { ScTarificadorSalud, ScFechas, ScPanel, ScPrecio } from "./style.js";
 import { ScUserButtons } from "../Buttons/styles.js";
-import { ScSubtitle, Separator } from "../../globalStyles.js";
+import { ScSubtitle, Separator, ScTextTitle } from "../../globalStyles.js";
 // COMPONENTES
 import DatePick from "../Datepick/DatePick.js";
 // BOOTSTRAP
@@ -32,13 +32,35 @@ const TarificadorSalud = () => {
         "Si quieres saber cual es la tarifa correspondiente a más de 6 asegurados en una misma póliza, por favor contacta con nosotros."
       );
     } else {
-      setFechaNac([...fechaNac, { id: uuidv4(), Nac: fechaSeleccionada }]);
+      setFechaNac([...fechaNac, { id: uuidv4(), nac: fechaSeleccionada }]);
     }
   };
 
   const borrarFecha = (id) => {
     const filtrarFecha = fechaNac.filter((elem) => elem.id !== id);
     setFechaNac([...filtrarFecha]);
+  };
+
+  const tarifaSaludG10 = [3982, 4366, 5085, 6780];
+  const tarifaDentalG10 = 551;
+
+  const darPrecio = (fecha) => {
+    let precio = 0;
+
+    const precioCadaAsegurado = fecha.map((elem) => {
+      const edadMiliseg = Date.now() - elem.nac;
+      const edadAnios = edadMiliseg / 1000 / 60 / 60 / 24 / 365;
+      const edadAbs = parseInt(edadAnios);
+
+      if (edadAbs < 21) return tarifaSaludG10[0];
+      if (edadAbs < 50) return tarifaSaludG10[1];
+      if (edadAbs < 60) return tarifaSaludG10[2];
+      return tarifaSaludG10[3];
+    });
+
+    precioCadaAsegurado.forEach((elem) => (precio += elem));
+
+    return precio / 100;
   };
 
   return (
@@ -63,7 +85,7 @@ const TarificadorSalud = () => {
                     <h5 className="numeroAsegurado">{`Asegurado ${
                       idx + 1
                     }`}</h5>
-                    <p className="fechaAsegurado">{parseFechas(elem.Nac)}</p>
+                    <p className="fechaAsegurado">{parseFechas(elem.nac)}</p>
                   </div>
                   <ScUserButtons
                     danger
@@ -76,7 +98,18 @@ const TarificadorSalud = () => {
               ))
             )}
           </ScFechas>
-          <ScPrecio />
+          <ScPrecio>
+            <ScTextTitle>¿Cuanto me costará?</ScTextTitle>
+            <p
+              style={{
+                textAlign: "center",
+                fontWeight: "bold",
+                fontSize: "1.5rem",
+              }}
+            >
+              {`${darPrecio(fechaNac)} €/mes`}
+            </p>
+          </ScPrecio>
         </ScPanel>
       </Container>
     </ScTarificadorSalud>

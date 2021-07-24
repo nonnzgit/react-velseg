@@ -25,6 +25,7 @@ export const ScFechas = styled.div`
   padding: 1.5rem 1rem;
   width: 18rem;
   color: black;
+  margin-bottom: 1rem;
 
   .cardAsegurado {
     display: flex;
@@ -56,4 +57,12 @@ export const ScFechas = styled.div`
   }
 `;
 
-export const ScPrecio = styled.div``;
+export const ScPrecio = styled.div`
+  padding: 1.5rem 1rem;
+  background: whitesmoke;
+  width: 18rem;
+  margin-bottom: 1rem;
+  border: 2px solid ${colors.secondary};
+  text-align: center;
+  color: black;
+`;
