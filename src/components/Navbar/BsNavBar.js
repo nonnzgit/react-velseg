@@ -21,7 +21,7 @@ const BsNavBar = () => {
       expand="lg"
     >
       <Container fluid="xl">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#intro">
           <img src={Logo} alt="logo empresa" width="130px" />
         </Navbar.Brand>
         <div className="CcHamMenu">
