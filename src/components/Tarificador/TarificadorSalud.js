@@ -42,10 +42,6 @@ const TarificadorSalud = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // CONST
-  const tarifaSaludG10 = [3982, 4366, 5085, 6780];
-  const tarifaDentalG10 = 551;
-
   // FUNC
   const parseFechas = (fecha) => {
     const dia = fecha.getDate() < 10 ? "0" + fecha.getDate() : fecha.getDate();
@@ -76,25 +72,53 @@ const TarificadorSalud = () => {
     setNumDental(e.target.value);
   };
 
-  const darPrecio = (fecha, numDental) => {
-    let precio = 0;
+  const darPrecio = () => {
+    // 1 . Create array for Age
+    const edadCadaAsegurado = fechaNac.map((elem) => {
+      // Set dates to compare
+      const today = new Date();
+      const input = new Date(elem.nac);
+      // Extract data to use in logic
+      const yearToday = today.getFullYear();
+      const yearInput = input.getFullYear();
+      const monthToday = today.getMonth();
+      const monthInput = input.getMonth();
+      const dayToday = today.getDate();
+      const dayInput = input.getDate();
+      const provAge = yearToday - yearInput;
+      // Logic:
+      // Get full lived number of years.
+      if (yearToday === yearInput) return 0;
+      if (monthToday < monthInput) return provAge - 1;
+      if (monthToday === monthInput) {
+        if (dayToday > dayInput) return provAge - 1;
+        return provAge;
+      }
+      return provAge;
+    });
 
-    const precioCadaAsegurado = fecha.map((elem) => {
-      const edadMiliseg = Date.now() - elem.nac;
-      const edadAnios = edadMiliseg / 1000 / 60 / 60 / 24 / 365;
-      // Notice that there's a very low error bacause every 4 years we have a year with 366 days instead of 365. It only affects the result when selecting a birth's date 1 or 2 days away from actual date and also age meets the age's range limits for the price rates table cointained in the next conditionals. We can make the error lower if we divide by 365.25 but to fix it completely we got to add a const in which we reflect when exactly have a year with 366 days and how many of them exactly the person we want to add have really lived. For our purpose its really ok to have that little error since theres so little case scenarios in which will affect us and this price is aprox anyway and client must continue the process contacting us.
-      const edadAbs = parseInt(edadAnios);
-
-      if (edadAbs < 21) return tarifaSaludG10[0];
-      if (edadAbs < 50) return tarifaSaludG10[1];
-      if (edadAbs < 60) return tarifaSaludG10[2];
+    // 2. Calculate prices
+    // Prices Tables
+    const tarifaSaludG10 = [3982, 4366, 5085, 6780];
+    const tarifaDentalG10 = 551;
+    // Logic
+    const precioCadaAsegurado = edadCadaAsegurado.map((edad) => {
+      if (edad < 21) return tarifaSaludG10[0];
+      if (edad < 50) return tarifaSaludG10[1];
+      if (edad < 60) return tarifaSaludG10[2];
       return tarifaSaludG10[3];
     });
 
-    precioCadaAsegurado.forEach((elem) => (precio += elem));
-    precio += numDental * tarifaDentalG10;
+    // Add prices per client (Excl Dental)
+    let precioTotal = 0;
+    precioCadaAsegurado.forEach(
+      (precioIndividual) => (precioTotal += precioIndividual)
+    );
+    // Add prices por client (Incl Dental)
+    precioTotal += numDental * tarifaDentalG10;
 
-    return precio / 100;
+    // 3.TOTAL
+    return precioTotal / 100;
   };
 
   // UI
@@ -164,7 +188,7 @@ const TarificadorSalud = () => {
                   fontSize: "1.5rem",
                 }}
               >
-                {`${darPrecio(fechaNac, numDental)} €/mes`}
+                {`${darPrecio(fechaNac)} €/mes`}
               </p>
             </ScPrecio>
           </StickyDiv>
