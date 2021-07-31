@@ -92,3 +92,25 @@ export const StyledPhoneIcon = styled.div`
   background: ${colors.secondary};
   transition: all 0.0001s linear;
 `;
+
+export const ScUserButtons = styled.button`
+  background: ${colors.secondary};
+  background: ${(props) => props.danger && "#EF5350"};
+  border: 2px solid ${colors.secondary};
+  border: ${(props) => props.dangerborder && "2px solid #EF5350"};
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  margin: 0.5rem;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  height: 2.2rem;
+  width: 2.2rem;
+  box-shadow: 2px 2px rgba(37, 49, 55, 10%);
+
+  &:hover {
+    background: black;
+  }
+`;

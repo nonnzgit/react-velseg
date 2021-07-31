@@ -8,7 +8,7 @@ import { ButtonArrow } from "../Buttons/Buttons.js";
 const Intro = () => {
   return (
     <>
-      <ScIntroSection id="home">
+      <ScIntroSection id="intro">
         <Container fluid="xl">
           <Row className=" align-items-center text-white m-auto">
             {/* CONTENT */}

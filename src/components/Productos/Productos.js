@@ -145,6 +145,15 @@ const Productos = () => {
               Tarificador Salud
             </Button>
           </Link>
+          <Link to="/tarificador/impagoalquiler">
+            <Button
+              className="btnTarif"
+              variant="outline-secondary"
+              style={{ margin: "0 0.3rem 1rem 0.3rem" }}
+            >
+              Tarificador Impago Alquiler
+            </Button>
+          </Link>
         </Row>
 
         {/* FICHAS DE PRODUCTOS */}
