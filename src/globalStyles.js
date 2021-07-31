@@ -46,6 +46,7 @@ export const ScTextLead = styled.p.attrs(() => ({
 }))`
   line-height: ${(props) => props.lineH && "2"};
   font-weight: ${(props) => props.bold && "bold"};
+  font-size: ${(props) => props.small && "1rem"};
 
   @media (min-width: 576px) {
     font-size: ${(props) => props.responsive && "1.175rem"};

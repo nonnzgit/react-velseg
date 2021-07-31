@@ -131,43 +131,81 @@ const TarificadorSalud = () => {
           <ScPanel>
             <DatePick handleFecha={handleFecha} />
             <ScFechas>
-              <ScTextBasic bold style={{ textAlign: "center" }}>
-                Personas a incluir:
-              </ScTextBasic>
               {fechaNac.length === 0 ? (
-                <p style={{ textAlign: "center" }}>
-                  Empieza agregando la fecha de nacimiento de un asegurado
-                </p>
+                <div>
+                  <p style={{ textAlign: "center", fontWeight: "bold" }}>
+                    Para empezar{" "}
+                    <span style={{ color: "#448AFF", fontWeight: "bold" }}>
+                      pulsa arriba, donde pone "Fecha de Nacimiento"
+                    </span>{" "}
+                    , selecciona una fecha, y añádela con el botón verde.
+                  </p>
+                  <p style={{ textAlign: "center" }}>
+                    ¡Ten en cuenta que puedes cambiar el año pulsando arriba a
+                    la izquierda sobre él!
+                  </p>
+                  <p style={{ textAlign: "center" }}>
+                    No tengas miedo, toca todo lo que quieras. En esta página no
+                    podrás contratar, es solo para que tengas una orientación de
+                    precio. ¡Y no vas a romper nada!
+                  </p>
+                </div>
               ) : (
-                fechaNac.map((elem, idx) => (
-                  <Row key={elem.id} className="cardAsegurado">
-                    <div className="datosAsegurado">
-                      <h5 className="numeroAsegurado">{`Asegurado ${
-                        idx + 1
-                      }`}</h5>
-                      <p className="fechaAsegurado">{parseFechas(elem.nac)}</p>
-                    </div>
-                    <ScUserButtons
-                      danger
-                      dangerborder
-                      onClick={() => borrarFecha(elem.id)}
-                    >
-                      <FontAwesomeIcon icon={faUserTimes}></FontAwesomeIcon>
-                    </ScUserButtons>
-                  </Row>
-                ))
+                <div>
+                  <ScTextBasic bold style={{ textAlign: "center" }}>
+                    Lista de personas que vas a incluir en la póliza:
+                  </ScTextBasic>
+                  {fechaNac.map((elem, idx) => (
+                    <Row key={elem.id} className="cardAsegurado">
+                      <div className="datosAsegurado">
+                        <h5 className="numeroAsegurado">{`Asegurado ${
+                          idx + 1
+                        }`}</h5>
+                        <p className="fechaAsegurado">
+                          {parseFechas(elem.nac)}
+                        </p>
+                      </div>
+                      <ScUserButtons
+                        danger
+                        dangerborder
+                        onClick={() => borrarFecha(elem.id)}
+                      >
+                        <FontAwesomeIcon icon={faUserTimes}></FontAwesomeIcon>
+                      </ScUserButtons>
+                    </Row>
+                  ))}
+                  <p
+                    style={{
+                      textAlign: "center",
+                      color: "#EF5350",
+                      fontWeight: "bold",
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    Puedes borrar personas que hayas incluido, pulsando el botón
+                    rojo.
+                  </p>
+                </div>
               )}
+
               {fechaNac.length !== 0 ? (
-                <form>
-                  <label for="dental">
-                    ¿Cuantos asegurados quieren contratar también el seguro
-                    dental?:
+                <form className="formDental">
+                  <label class="labelSelect" for="dental">
+                    <h6 style={{ textAlign: "center" }}>
+                      ¿Cuantas de las personas que has añadido quieren también
+                      <span style={{ color: "#448AFF" }}>
+                        {" "}
+                        cobertura dental
+                      </span>
+                      ?
+                    </h6>
                   </label>
                   <select
                     name="numdental"
                     id="dental"
                     onChange={handleNumDental}
                     value={numDental}
+                    className="select"
                   >
                     <option value={0}>0</option>
                     {fechaNac.map((elem, idx) => (
@@ -199,7 +237,7 @@ const TarificadorSalud = () => {
           <ScTextBasic style={{ fontSize: "1.3rem" }}>
             Algunas cosas que deberías saber:
           </ScTextBasic>
-          <ScTextLead>
+          <ScTextLead small>
             <ol>
               <li>
                 Los precios corresponden a seguros de salud COMPLETOS, esto

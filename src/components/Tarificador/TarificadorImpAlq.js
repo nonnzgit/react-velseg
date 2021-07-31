@@ -85,28 +85,28 @@ const TarificadorImpAlq = () => {
             <ScSelectorDoc>
               <div className="titleDoc">
                 <ScTextBasic bold style={{ textAlign: "center" }}>
-                  Documentación necesaria.
+                  Documentación necesaria para contratar:
                 </ScTextBasic>
                 <h5 style={{ fontSize: "1rem" }}>
-                  La compañía realiza un estudio, y determina si se puede hacer
-                  el seguro a esos inquilinos. Para ello hay que aportar la
-                  siguiente documentación:
+                  Las compañías de seguro de impago de alquiler, necesitan
+                  comprobar que en el momento de la contratación hay un nivel
+                  mínimo de solvencia por parte de inquilinos y avalistas. Para
+                  ello debes de reunir la siguiente documentación.
                 </h5>
-                <p style={{ fontSize: "0.8rem", lineHeight: "1.2rem" }}>
-                  (Marca la casilla correspondiente si existe algún inquilino o
-                  avalista que reciba ingresos de esta forma)
-                </p>
               </div>
 
               <div className="infoDoc">
-                <ScTextBasic bold>Aportar siempre:</ScTextBasic>
-                <ul>
+                <ScTextBasic bold>Siempre necesitaras:</ScTextBasic>
+                <ul style={{ fontSize: "0.9rem" }}>
                   <li>
                     Solicitud de seguro firmada{" "}
                     <a href="tel:+34955327396">(+info)</a>
                   </li>
                   <li>DNI/CIF de Inquilinos y Avalistas</li>
                 </ul>
+                <ScTextBasic bold>
+                  Si los inquilinos o avalistas son:
+                </ScTextBasic>
                 <label className="checkboxLabel">
                   <input
                     className="checkbox"
@@ -115,10 +115,10 @@ const TarificadorImpAlq = () => {
                     value="asalariado"
                     onChange={handleCheckbox}
                   />
-                  Recibe un salario
+                  Trabajador asalariado
                 </label>
                 {doc.asalariado && (
-                  <ul>
+                  <ul className="innerList">
                     <li>Dos últimas Nóminas (Fijo {">"} 1 año)</li>
                     <li>Vida Laboral (Fijo {"<"} 1 año)</li>
                   </ul>
@@ -131,10 +131,10 @@ const TarificadorImpAlq = () => {
                     value="autonomo"
                     onChange={handleCheckbox}
                   />
-                  Es autonomo
+                  Autonomo
                 </label>
                 {doc.autonomo && (
-                  <ul>
+                  <ul className="innerList">
                     <li>Alta de autónomo</li>
                     <li>Última declaración IRPF</li>
                     <li>Dos últimos pagos autónomo a la Seg. Social</li>
@@ -148,10 +148,10 @@ const TarificadorImpAlq = () => {
                     value="pensionista"
                     onChange={handleCheckbox}
                   />
-                  Es pensionista
+                  Pensionista
                 </label>
                 {doc.pensionista && (
-                  <ul>
+                  <ul className="innerList">
                     <li>Certificado pensiones</li>
                     <li>Comunicación actualización anual pensión</li>
                   </ul>
@@ -164,10 +164,10 @@ const TarificadorImpAlq = () => {
                     value="sociedad"
                     onChange={handleCheckbox}
                   />
-                  Es una empresa
+                  Empresas
                 </label>
                 {doc.sociedad && (
-                  <ul>
+                  <ul className="innerList">
                     <li>Alta Hacienda (Mod 036/037)</li>
                     <li>
                       Certificado de estar al corriente de pago obligaciones
@@ -179,16 +179,36 @@ const TarificadorImpAlq = () => {
                     </li>
                   </ul>
                 )}
+                <p
+                  style={{
+                    textAlign: "center",
+                    color: "#EF5350",
+                    fontWeight: "bold",
+                    fontSize: "0.9rem",
+                  }}
+                >
+                  Marca tantas casillas como sean necesarias, según el tipo de
+                  trabajo de cada inquilino.
+                </p>
               </div>
             </ScSelectorDoc>
           </ScPanel>
           <StickyDiv>
             <ScPrecio>
               {(renta === 0 && (
-                <p>
-                  Para conocer su precio, introduzca una renta comprendida entre
-                  100 y 10000 € sin decimales.
-                </p>
+                <div className="instrucciones">
+                  <h5 style={{ fontWeight: "bold " }}>
+                    Para empezar, necesitas{" "}
+                    <span style={{ color: "#448AFF" }}>
+                      introducir el importe del alquiler.
+                    </span>
+                  </h5>
+                  <br />
+                  <p style={{ fontSize: "1rem" }}>
+                    Solo serán válidos importes sin decimales entre 100 y 9999
+                    €/mensuales.
+                  </p>
+                </div>
               )) || (
                 <div>
                   <ScTextTitle>¿Cuanto me costará?</ScTextTitle>

@@ -63,6 +63,26 @@ export const ScFechas = styled.div`
       line-height: 1rem;
     }
   }
+
+  .formDental {
+    display: inline-flex;
+    align-items: center;
+
+    .labelSelect {
+      margin: 0;
+
+      h6 {
+        padding: 0.5rem;
+        margin: 0;
+      }
+    }
+
+    .select {
+      height: fit-content;
+      padding: 0.1rem;
+      margin: 0 0.4rem 0 0.6rem;
+    }
+  }
 `;
 
 export const ScPrecio = styled.div`
@@ -123,6 +143,10 @@ export const ScTarificadorImpAlq = styled.section`
     margin-bottom: 7px;
     align-self: flex-start;
   }
+
+  .instrucciones {
+    padding: 0.5rem;
+  }
 `;
 
 export const ScSelectorRenta = styled.div`
@@ -161,7 +185,7 @@ export const ScSelectorDoc = styled.div`
   margin-bottom: 1rem;
 
   .titleDoc {
-    padding: 0 0.7rem;
+    padding: 0 0.7rem 0.7rem 0.7rem;
   }
 
   .infoDoc {
@@ -172,6 +196,11 @@ export const ScSelectorDoc = styled.div`
 
     ul {
       list-style-position: inside;
+      padding: 0 0.4rem;
+    }
+    .innerList {
+      padding-left: 1.5rem;
+      font-size: 0.9rem;
     }
   }
 
