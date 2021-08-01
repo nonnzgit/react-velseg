@@ -133,13 +133,13 @@ const TarificadorSalud = () => {
             <ScFechas>
               {fechaNac.length === 0 ? (
                 <div>
-                  <p style={{ textAlign: "center", fontWeight: "bold" }}>
+                  <h5 style={{ textAlign: "center", fontWeight: "bold" }}>
                     Para empezar{" "}
                     <span style={{ color: "#448AFF", fontWeight: "bold" }}>
                       pulsa arriba, donde pone "Fecha de Nacimiento"
                     </span>{" "}
                     , selecciona una fecha, y añádela con el botón verde.
-                  </p>
+                  </h5>
                   <p style={{ textAlign: "center" }}>
                     ¡Ten en cuenta que puedes cambiar el año pulsando arriba a
                     la izquierda sobre él!
