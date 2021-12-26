@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 // ESTILOS
 import {
   ScPanel,
@@ -9,16 +9,16 @@ import {
   ScPrecio,
   StickyDiv,
   InfoDiv,
-} from "./style.js";
+} from './style.js';
 import {
   ScSubtitle,
   Separator,
   ScTextBasic,
   ScTextTitle,
   ScTextLead,
-} from "../../globalStyles";
+} from '../../globalStyles';
 // BOOTSTRAP
-import { Container, InputGroup, FormControl } from "react-bootstrap";
+import { Container, InputGroup, FormControl } from 'react-bootstrap';
 
 const TarificadorImpAlq = () => {
   const [renta, setRenta] = useState(0);
@@ -29,7 +29,7 @@ const TarificadorImpAlq = () => {
     sociedad: false,
   });
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     e.preventDefault();
     if (e.target.value.match(/^\d{3,4}$/) != null) {
       setRenta(e.target.value);
@@ -38,8 +38,8 @@ const TarificadorImpAlq = () => {
     }
   };
 
-  const handleCheckbox = (e) => {
-    setDoc((prevState) => ({
+  const handleCheckbox = e => {
+    setDoc(prevState => ({
       ...prevState,
       [e.target.value]: e.target.checked,
     }));
@@ -67,7 +67,7 @@ const TarificadorImpAlq = () => {
 
   return (
     <ScTarificadorImpAlq>
-      <Container fluid={"xl"}>
+      <Container fluid={'xl'}>
         <ScSubtitle responsive>Tarificador Impago Alquiler</ScSubtitle>
         <Separator />
         <div className="parrilla">
@@ -88,19 +88,19 @@ const TarificadorImpAlq = () => {
             <ScSelectorDoc>
               {(renta === 0 && (
                 <div className="instrucciones">
-                  <h5 style={{ fontWeight: "bold ", textAlign: "center" }}>
-                    Debes{" "}
-                    <span style={{ color: "#448AFF" }}>
+                  <h5 style={{ fontWeight: 'bold ', textAlign: 'center' }}>
+                    Debes{' '}
+                    <span style={{ color: '#448AFF' }}>
                       introducir el importe del alquiler.
-                    </span>{" "}
+                    </span>{' '}
                     en el recuadro de arriba para obtener el precio.
                   </h5>
                   <br />
-                  <p style={{ fontSize: "1rem", textAlign: "center" }}>
+                  <p style={{ fontSize: '1rem', textAlign: 'center' }}>
                     Solo serán válidos importes sin decimales entre 100 y 9999
                     €/mensuales.
                   </p>
-                  <p style={{ fontSize: "1rem", textAlign: "center" }}>
+                  <p style={{ fontSize: '1rem', textAlign: 'center' }}>
                     Aunque no influya en el precio, también te informaremos de
                     la documentación que necesitarás para contratar el seguro,
                     ya que los seguro de impago de alquiler necesitan que
@@ -111,10 +111,10 @@ const TarificadorImpAlq = () => {
               )) || (
                 <div>
                   <div className="titleDoc">
-                    <ScTextBasic bold style={{ textAlign: "center" }}>
+                    <ScTextBasic bold style={{ textAlign: 'center' }}>
                       Documentación necesaria para contratar:
                     </ScTextBasic>
-                    <h5 style={{ fontSize: "1rem" }}>
+                    <h5 style={{ fontSize: '1rem' }}>
                       Las compañías de seguro de impago de alquiler, necesitan
                       comprobar que en el momento de la contratación hay un
                       nivel mínimo de solvencia por parte de inquilinos y
@@ -125,10 +125,12 @@ const TarificadorImpAlq = () => {
 
                   <div className="infoDoc">
                     <ScTextBasic bold>Siempre necesitaras:</ScTextBasic>
-                    <ul style={{ fontSize: "0.9rem" }}>
+                    <ul style={{ fontSize: '0.9rem' }}>
                       <li>
-                        Solicitud de seguro firmada{" "}
-                        <a href="tel:+34955327396">(+info)</a>
+                        Solicitud de seguro firmada{' '}
+                        <a href="tel:+34955327396" rel="noreferrer noopener">
+                          (+info)
+                        </a>
                       </li>
                       <li>DNI/CIF de Inquilinos y Avalistas</li>
                     </ul>
@@ -147,8 +149,8 @@ const TarificadorImpAlq = () => {
                     </label>
                     {doc.asalariado && (
                       <ul className="innerList">
-                        <li>Dos últimas Nóminas (Fijo {">"} 1 año)</li>
-                        <li>Vida Laboral (Fijo {"<"} 1 año)</li>
+                        <li>Dos últimas Nóminas (Fijo {'>'} 1 año)</li>
+                        <li>Vida Laboral (Fijo {'<'} 1 año)</li>
                       </ul>
                     )}
                     <label className="checkboxLabel">
@@ -209,10 +211,10 @@ const TarificadorImpAlq = () => {
                     )}
                     <p
                       style={{
-                        textAlign: "center",
-                        color: "#EF5350",
-                        fontWeight: "bold",
-                        fontSize: "0.9rem",
+                        textAlign: 'center',
+                        color: '#EF5350',
+                        fontWeight: 'bold',
+                        fontSize: '0.9rem',
                       }}
                     >
                       Marca tantas casillas como sean necesarias, según el tipo
@@ -230,9 +232,9 @@ const TarificadorImpAlq = () => {
                   <ScTextTitle>¿Cuanto me costará?</ScTextTitle>
                   <p
                     style={{
-                      textAlign: "center",
-                      fontWeight: "bold",
-                      fontSize: "1.5rem",
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      fontSize: '1.5rem',
                     }}
                   >
                     {`${darPrecio()} €/año`}
@@ -245,7 +247,7 @@ const TarificadorImpAlq = () => {
       </Container>
       <InfoDiv>
         <Container>
-          <ScTextBasic style={{ fontSize: "1.3rem" }}>
+          <ScTextBasic style={{ fontSize: '1.3rem' }}>
             Algunas cosas que deberías saber:
           </ScTextBasic>
           <ScTextLead small>

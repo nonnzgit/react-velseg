@@ -1,8 +1,8 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import LogoG10 from "../../images/logoG10.png";
-import { ScFooter } from "./style.js";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import LogoG10 from '../../images/logoG10.png';
+import { ScFooter } from './style.js';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -10,7 +10,11 @@ const Footer = () => {
       <Container fluid="xl">
         <Row>
           <Col className="companies" lg={4}>
-            <a href="https://grupo10mb.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://grupo10mb.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <img src={LogoG10} alt="logo correduria" />
             </a>
           </Col>
@@ -35,8 +39,28 @@ const Footer = () => {
             <span>Enlaces de interés</span>
             <ul>
               <li>Telefonos compañías</li>
-              <li>Sede Catrastro</li>
-              <li>Consorcio compensación de seguros</li>
+
+              <li>
+                <a
+                  href="https://www1.sedecatastro.gob.es/cycbieninmueble/ovcbusqueda.aspx"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="routerLink"
+                >
+                  Sede Catrastro
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://www.consorseguros.es/web/inicio"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="routerLink"
+                >
+                  Consorcio compensación de seguros
+                </a>
+              </li>
             </ul>
           </Col>
         </Row>

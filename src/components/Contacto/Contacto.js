@@ -1,14 +1,14 @@
-import { ScContacto } from "./style.js";
-import logoConj from "../../images/logocon.jpg";
-import { Container, Row, Col } from "react-bootstrap";
-import { Separator, ScSubtitle } from "../../globalStyles.js";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ScContacto } from './style.js';
+import logoConj from '../../images/logocon.jpg';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Separator, ScSubtitle } from '../../globalStyles.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
   faEnvelope,
   faPhoneAlt,
   faStoreAlt,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 const Contacto = () => {
   return (
@@ -29,12 +29,12 @@ const Contacto = () => {
                 className="logoconj"
               />
             </div>
-            <div style={{ padding: "0 1rem 1rem 1rem" }}>
-              <ScSubtitle start style={{ marginTop: "3rem", fontSize: "3rem" }}>
+            <div style={{ padding: '0 1rem 1rem 1rem' }}>
+              <ScSubtitle start style={{ marginTop: '3rem', fontSize: '3rem' }}>
                 Confía en nosotros
               </ScSubtitle>
               <p className="lead">
-                Somos una correduría con{" "}
+                Somos una correduría con{' '}
                 <strong>más de 10 años de antigüedad</strong>. Con profesionales
                 con más de 30 años de experiencia dentro del sector asegurador.
                 Trabajamos con las mejores compañías, y casi todos los ramos de
@@ -42,7 +42,7 @@ const Contacto = () => {
               </p>
               <ScSubtitle
                 start
-                style={{ marginTop: "3rem", fontSize: "1.5rem" }}
+                style={{ marginTop: '3rem', fontSize: '1.5rem' }}
               >
                 Quiero que reviséis mis seguros ¿Qué tengo que hacer?
               </ScSubtitle>
@@ -72,7 +72,7 @@ const Contacto = () => {
                   Visítanos
                 </li>
               </ul>
-              <ScSubtitle style={{ marginTop: "4rem", fontSize: "1.5rem" }}>
+              <ScSubtitle style={{ marginTop: '4rem', fontSize: '1.5rem' }}>
                 Encontrarás toda la información a continuación
               </ScSubtitle>
             </div>
@@ -93,11 +93,11 @@ const Contacto = () => {
                 </a>
               </div>
               <div className="text-center">
-                Plaza de Italia, Nº 4, Local 4 C{" "}
+                Plaza de Italia, Nº 4, Local 4 C{' '}
                 <span className="d-block"> 41089, Montequinto (Sevilla)</span>
               </div>
               <div className="text-center">
-                <a href="tel:+34606342351">
+                <a href="tel:+34606342351" rel="noreferrer noopener">
                   <FontAwesomeIcon
                     className="iconSecondCard btn iconSecondCard btn-rounded bg-secondary text-white shadow"
                     icon={faPhoneAlt}
@@ -106,10 +106,13 @@ const Contacto = () => {
                 </a>
               </div>
               <div className="text-center">
-                955 327 396 <span className="d-block">606 342 351</span>{" "}
+                955 327 396 <span className="d-block">606 342 351</span>{' '}
               </div>
               <div className="text-center ">
-                <a href="mailto:montequinto@grupo10mb.com">
+                <a
+                  href="mailto:montequinto@grupo10mb.com"
+                  rel="noreferrer noopener"
+                >
                   <FontAwesomeIcon
                     className="iconSecondCard btn iconSecondCard btn-rounded bg-secondary text-white shadow"
                     icon={faEnvelope}
